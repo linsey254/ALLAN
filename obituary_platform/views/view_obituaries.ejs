@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Obituaries</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="View the latest obituaries submitted by our community.">
+    <meta name="keywords" content="obituaries, memorials, tributes, remember, loved ones">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="View Obituaries">
+    <meta property="og:description" content="View the latest obituaries submitted by our community.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= url %>">
+    <meta property="og:image" content="URL_TO_AN_IMAGE"> <!-- Add a relevant image URL -->
+    <meta property="og:site_name" content="Obituary Platform">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="View Obituaries">
+    <meta name="twitter:description" content="View the latest obituaries submitted by our community.">
+    <meta name="twitter:image" content="URL_TO_AN_IMAGE"> <!-- Add a relevant image URL -->
+</head>
+<body>
+    <div class="container">
+        <h1>Obituaries</h1>
+        
+        <!-- Social Media Sharing Buttons -->
+        <div class="social-buttons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<%= url %>" target="_blank">Share on Facebook</a>
+            <a href="https://twitter.com/intent/tweet?url=<%= url %>&text=Check%20out%20the%20latest%20obituaries%20on%20our%20platform" target="_blank">Share on Twitter</a>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Date of Death</th>
+                    <th>Content</th>
+                    <th>Author</th>
+                    <th>Submission Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% obituaries.forEach(obituary => { %>
+                <tr>
+                    <td><%= obituary.name %></td>
+                    <td><%= obituary.date_of_birth %></td>
+                    <td><%= obituary.date_of_death %></td>
+                    <td><%= obituary.content %></td>
+                    <td><%= obituary.author %></td>
+                    <td><%= obituary.submission_date %></td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
